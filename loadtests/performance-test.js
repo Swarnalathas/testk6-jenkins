@@ -1,4 +1,4 @@
-import { sleep } from"k6";
+import { sleep,check } from"k6";
 import http from "k6/http";
 
 export let options = {
@@ -12,6 +12,11 @@ export let options = {
 
 
 export default function() {
-  http.get("https://g5ddyd3i08.execute-api.us-east-1.amazonaws.com/dev/hello");
+  let res = http.get("https://g5ddyd3i08.execute-api.us-east-1.amazonaws.com/dev/hello");
+  check(res, {
+    'status was 200': r => r.status == 200,
+    'transaction time OK': r => r.timings.duration < 200
+  });
   sleep(3);
 }
+
