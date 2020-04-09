@@ -12,6 +12,6 @@ export let options = {
 
 
 export default function() {
-  http.get("https://test-api.loadimpact.com/public/crocodiles/");
+  http.get("https://g5ddyd3i08.execute-api.us-east-1.amazonaws.com/dev/hello");
   sleep(3);
 }
