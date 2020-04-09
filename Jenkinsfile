@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+    stages {
         stage('Performance Testing') {
             steps {
                 echo 'Running K6 performance tests...'
