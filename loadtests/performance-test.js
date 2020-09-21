@@ -12,7 +12,8 @@ export let options = {
 
 
 export default function() {
-  let res = http.get("https://g5ddyd3i08.execute-api.us-east-1.amazonaws.com/dev/hello");
+ // let res = http.get("https://g5ddyd3i08.execute-api.us-east-1.amazonaws.com/dev/hello");
+  let res = http.get("www.google.com");
   check(res, {
     'status was 200': r => r.status == 200,
     'transaction time OK': r => r.timings.duration < 200
